@@ -1,7 +1,6 @@
 var app = new function()  {
     this.FormTabels = [];
 
-
     this.Local = function(){
            this.firstname = document.getElementById('firstname').value;
            this.lastname = document.getElementById('lastname').value;
@@ -9,23 +8,23 @@ var app = new function()  {
            this.email = document.getElementById('email').value;
            var StuObj = {firstname :this.firstname,lastname:this.lastname,phone:this.phone,email:this.email}
            var vEmail = this.validateEmail(this.email)
-            console.log(vEmail)
+        
           
        if (this.firstname.length > 0 && this.lastname.length > 0 ) {
          if(vEmail === true){
             if(check === -1){
-            this.FormTabels.push(StuObj);
+                this.FormTabels.push(StuObj);
             }else{
-            this.FormTabels.splice(check,1,StuObj)
+                this.FormTabels.splice(check,1,StuObj)
             }
-            localStorage.Records = JSON.stringify(this.FormTabels);
-            document.getElementById('add').innerHTML = 'Add';
-            this.initial();
+                localStorage.Records = JSON.stringify(this.FormTabels);
+                document.getElementById('add').innerHTML = 'Add';
+                this.initial();
             }else{
             alert('nie poprawny e-mail')  
             }
         }else{
-        alert('pole nie moga byc puste') 
+        alert('Pola nie moga byc puste') 
         }
     }
     this.validateEmail = function(email) 
@@ -33,7 +32,7 @@ var app = new function()  {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
     }
-    
+
     this.initial = function(){
         document.getElementById('cells').innerHTML = " ";
         if(localStorage.Records){
@@ -89,7 +88,6 @@ var app = new function()  {
             }
     }
 }
-
 window.onload = function()
 {
   app.initial();
