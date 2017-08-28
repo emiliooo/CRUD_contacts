@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#spoiler{
+    display: none;
+}
+#cells {
+    border: 1px solid blue;
+    width: 1000px;
+    background:rgba(210, 92, 179, 0.6);
+} 
+tr td{
+    border: 1px solid red;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: cursive;
+}
+form{
+    width: 500px;
+    height: 268px;
+    border: 1px solid red;
+    background: rgba(215, 165, 0, 0.5);
+    padding: 20px;
+    margin: 25px;
+    display: inline-grid;
+}
+button{
+    width: 90px;
+    background: pink;
+}
+#counter{
+    font-size: 18px;
+    color: blue;
+}
