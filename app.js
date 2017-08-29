@@ -6,8 +6,8 @@ var app = new function()  {
            this.lastname = document.getElementById('lastname').value;
            this.phone = document.getElementById('phone').value;
            this.email = document.getElementById('email').value;
-           var StuObj = {firstname :this.firstname,lastname:this.lastname,phone:this.phone,email:this.email}
-           var vEmail = this.validateEmail(this.email)
+           var StuObj = {firstname :this.firstname,lastname:this.lastname,phone:this.phone,email:this.email};
+           var vEmail = this.validateEmail(this.email);
         
           
        if (this.firstname.length > 0 && this.lastname.length > 0 ) {
@@ -15,16 +15,16 @@ var app = new function()  {
             if(check === -1){
                 this.FormTabels.push(StuObj);
             }else{
-                this.FormTabels.splice(check,1,StuObj)
+                this.FormTabels.splice(check,1,StuObj);
             }
                 localStorage.Records = JSON.stringify(this.FormTabels);
                 document.getElementById('add').innerHTML = 'Add';
                 this.initial();
             }else{
-            alert('nie poprawny e-mail')  
+            alert('nie poprawny e-mail');  
             }
         }else{
-        alert('Pola nie moga byc puste') 
+        alert('Pola nie moga byc puste'); 
         }
     }
     this.validateEmail = function(email) 
@@ -44,7 +44,6 @@ var app = new function()  {
     }
 
     this.preparateTabel = function(index,firstname,lastname,phone,email){
-         
         var table = document.getElementById("cells")
         var row = table.insertRow();
         var firstNameCell = row.insertCell(0);
@@ -61,9 +60,9 @@ var app = new function()  {
     }
     this.removeCell = function (index){
         var table = document.getElementById('cells');
-        table.deleteRow(index)
+        table.deleteRow(index);
         this.FormTabels.splice(index,1);
-        localStorage.Records = JSON.stringify(this.FormTabels)
+        localStorage.Records = JSON.stringify(this.FormTabels);
         app.Count();
     }
     var check = -1;
